@@ -2,6 +2,12 @@ from django.db import models
 
 import datetime
 # Create your models here.
+class Subject(models.Model):
+    sub_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.sub_name
+
 
 class Book(models.Model):
     book_name = models.CharField(max_length=200)
@@ -22,9 +28,4 @@ class Book(models.Model):
     def sub(self):
         return self.book_subject
     
-class Subject(models.Model):
-    sub_name = models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.sub_name
-    
+
